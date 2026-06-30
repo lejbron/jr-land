@@ -20,9 +20,11 @@ const benefits = [
     <div class="flex justify-center reveal">
       <div class="relative">
         <img
-          src={`${import.meta.env.BASE_URL}main.jpg`}
+          src={`${import.meta.env.BASE_URL}main.webp`}
           alt="Сказочник — коллекционная фигурка"
           class="w-full max-w-sm rounded-sm shadow-[0_0_80px_rgba(88,74,153,0.25)]"
+          loading="lazy"
+          decoding="async"
         />
         <div class="absolute inset-0 rounded-sm ring-1 ring-brand-purple/25 pointer-events-none"></div>
       </div>
