@@ -9,4 +9,5 @@ export default defineConfig({
     host: true,
     port: 4321,
   },
+  base: '/jr-land/',
 });

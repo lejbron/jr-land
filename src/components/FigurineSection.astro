@@ -1,10 +1,11 @@
 ---
 import '../styles/reveal.css';
 
+const base = import.meta.env.BASE_URL;
 const figurinePhotos = [
-  { src: '/front.png', alt: 'Фигурка, вид спереди' },
-  { src: '/left.png',  alt: 'Фигурка, вид сбоку'  },
-  { src: '/back.png',  alt: 'Фигурка, вид сзади'  },
+  { src: `${base}front.png`, alt: 'Фигурка, вид спереди' },
+  { src: `${base}left.png`,  alt: 'Фигурка, вид сбоку'  },
+  { src: `${base}back.png`,  alt: 'Фигурка, вид сзади'  },
 ];
 ---
 

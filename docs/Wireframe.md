@@ -4,7 +4,7 @@
 подзаголовок: Сказочник  
 
 Композиция: 
-- Закрытый занавес (massets/curtain.png)
+- Закрытый занавес (assets/curtain.png)
 - Логотип в правом верхнем углу (assets/logos/tower_logo_colored.svg)
 - Надпись Мир Шута на пустом пространстве между занавесками (assets/logos/logo_sign.svg)
 - Надпись Сказочник: (assets/logos/skazo4nik.svg)

@@ -11,12 +11,10 @@
 
 .curtain--left {
   left: 0;
-  background-image: url('/curtain.png');
   background-position: 0% 50%;
 }
 
 .curtain--right {
   right: 0;
-  background-image: url('/curtain.png');
   background-position: 100% 50%;
 }
