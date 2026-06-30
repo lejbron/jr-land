@@ -4,10 +4,9 @@ import tailwind from '@astrojs/tailwind';
 export default defineConfig({
   integrations: [tailwind()],
   publicDir: 'assets',
-  base: '/jr-land',
+  base: '/jr-land/',
   server: {
     host: true,
     port: 4321,
   },
-  base: '/jr-land/',
 });
