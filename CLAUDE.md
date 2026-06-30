@@ -1,0 +1,74 @@
+# Claude Project Instructions
+
+## General
+
+- Never delete files, add them to `suggested_for_deletition` folder. Create folder if it does not exist.
+- Never install any packages on host machine, use Docker images instead.
+- Collect all your comments in one file - .claude/landing_log.md
+
+## Roles
+
+You are acting as:
+
+- Senior Product Designer
+- Senior UX Designer
+- Senior Frontend Engineer
+- Senior Conversion Rate Optimization Specialist
+
+## Objectives
+
+Create a high-converting landing page.
+
+The landing page must:
+
+- Clearly communicate value
+- Focus on conversion
+- Follow modern UX practices
+- Be visually polished
+- Be mobile-first
+- Be accessible
+
+## Process
+
+Before implementing:
+
+1. Analyze all provided documentation.
+2. Identify missing information.
+3. Create landing page structure.
+4. Explain reasoning.
+5. Implement only after planning.
+
+## Design Principles
+
+- Clear hierarchy
+- Strong CTA visibility
+- Minimal cognitive load
+- Fast loading
+- Responsive design
+- Accessibility compliance
+
+## Development Standards
+
+- Semantic HTML
+- TypeScript
+- Reusable components
+- Clean architecture
+- SEO optimization
+- Lighthouse optimization
+
+## Required Deliverables
+
+1. Information architecture
+2. Landing page wireframe structure
+3. Component list
+4. Implementation plan
+5. Production-ready code
+
+## Definition of Done
+
+- Responsive on mobile, tablet, desktop
+- No TypeScript errors
+- No console errors
+- SEO-ready
+- Performance optimized
+- Matches provided brand guidelines

@@ -1,0 +1,176 @@
+---
+import '../styles/reveal.css';
+
+const boxContents = [
+  'Премиальная упаковка в авторском стиле',
+  'Уникальная фигурка с одним из трёх видов серёжек',
+  'Один из четырёх видов стикерпаков',
+  'Сертификат подлинности с автографом',
+  'Карточка с технической информацией',
+];
+---
+
+<section id="details" class="bg-brand-ink py-24 px-6">
+  <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 md:gap-20 items-start">
+
+    <!-- Процесс создания -->
+    <div class="space-y-5 reveal">
+      <h3 class="font-serif text-brand-parchment text-2xl md:text-3xl tracking-wide">
+        Процесс создания
+      </h3>
+      <p class="font-serif text-brand-tan text-base md:text-lg leading-relaxed">
+        Фигурка напечатана на 3D&#8209;принтере из фотополимерной смолы. Каждый экземпляр
+        вручную обработан и покрашен акриловыми красками с финишным покрытием лаком.
+      </p>
+      <p class="font-serif text-brand-tan/60 text-sm tracking-wide">
+        Требует бережного хранения. Не игрушка. Всего будет выпущено 250 штук.
+      </p>
+
+      <!-- Анимация: сумка с молниями -->
+      <div class="pt-4 reveal" style="--delay:100ms">
+        <div
+          id="lightning-bag"
+          style="position:relative;width:100%;max-width:340px;aspect-ratio:520/470;overflow:hidden;cursor:pointer;background:transparent;user-select:none;"
+        >
+          <div class="lb-ground" style="position:absolute;left:50%;bottom:9%;width:46%;height:9%;transform:translateX(-50%);background:radial-gradient(ellipse at center, rgba(0,0,0,0.55), rgba(0,0,0,0) 70%);filter:blur(6px);pointer-events:none;opacity:0;"></div>
+
+          <img
+            class="lb-bag"
+            src="/bag.svg"
+            alt="Упаковка"
+            draggable="false"
+            style="position:absolute;left:50%;top:8%;width:62%;transform:translateX(-50%);animation:lb-breathe 6s ease-in-out infinite;pointer-events:none;"
+          />
+
+          <svg class="lb-bolts" viewBox="0 0 91.65 89.29" style="position:absolute;left:50%;top:8%;width:62%;transform:translateX(-50%);overflow:visible;pointer-events:none;">
+            <defs>
+              <filter id="lb-glow" x="-60%" y="-60%" width="220%" height="220%">
+                <feGaussianBlur in="SourceAlpha" stdDeviation="1.5" result="b"></feGaussianBlur>
+                <feFlood id="lb-flood" flood-color="#a78bfa" flood-opacity="0.95" result="c"></feFlood>
+                <feComposite in="c" in2="b" operator="in" result="halo"></feComposite>
+                <feMerge>
+                  <feMergeNode in="halo"></feMergeNode>
+                  <feMergeNode in="halo"></feMergeNode>
+                  <feMergeNode in="SourceGraphic"></feMergeNode>
+                </feMerge>
+              </filter>
+            </defs>
+
+            <g data-g="0" fill="#ffffff" filter="url(#lb-glow)" style="opacity:0;will-change:opacity"><path d="M0,31.42c.5-.04,1.05.06,1.54,0,3.39-.39,7.68-.4,11.1-.47,2.37-.05,6.13.35,8.27,0,.09-.02.16-.24.24-.24.07.27.81.12.59.59-.07.15-.38.31-.47.47-.57.99-1.13,2.1-1.65,3.07-.32.58-1.32,2.17-1.42,2.6-.03.15-.03.8,0,.83.02.02.47-.07.59.24,5.15,1.57,10.66,3.65,15.83,5.43.1.03.14.21.24.24.1.03,1.47-.07.83.47-.04.03-.9.03-1.06,0-.95-.16-1.58-.16-2.6-.24-6.88-.51-13.74-1.28-20.79-1.42-.36-.54-.66,0-.71,0-.12,0-.41-.4-.35-.59.03-.11.36-.31.47-.47.48-.68.61-.49.71-.59.04-.04-.06-.24,0-.35.23-.42.92-.95,1.18-1.42.06-.11-.04-.31,0-.35.05-.05.42.05.59,0,.04-.01.58-.55.59-.59.11-.35-.62-.7-.47-.83.06-.05.43.04.47,0,.03-.03.03-.91,0-.94-.04-.04-.23.05-.35,0-.16-.07-.56-.41-.71-.47-3.03-1.17-6.35-2.18-9.45-3.54-.68-.3-1.24-.72-1.89-.94-.44-.15-.8-.33-1.3-.24v-.24Z"></path></g>
+            <g data-g="1" fill="#ffffff" filter="url(#lb-glow)" style="opacity:0;will-change:opacity"><path d="M81.97,14.65c.07.06-.8.86-.47,1.18.05.05,1.28.03,1.54,0,.09,0,.15-.23.24-.24,1.63-.17,3.65-.43,5.2-.47.27,0,.65-.14.59.24l-.83.24c-3.93,3.5-7.98,6.46-11.81,9.92-.64.58-1.16,1.38-1.65,1.65-.09.05-.55.5-.59.59-.24.46.39.35.59.35,1.15.02,2.6-.2,3.54.24l1.54.12c-.24.45-.55.27-.83.35-.82.25-3.34,2.02-4.25,2.6-3.88,2.47-7.43,4.75-11.1,7.32-.95.66-1.18.58-.35-.35,1.04-1.18,2.06-2.26,2.83-3.54l3.31-3.54c.08-.89-1.12.14-1.42-.12-.06-.05.61-1.12.71-1.3.24-.42,1.2-2.05,1.54-2.24.36-.21.87-.78,1.3-1.3,1.03-1.24,2.24-2.64,3.07-3.78.38-.56,1.36-1.39,1.65-1.89.03-.05-.03-.16,0-.24.05-.1.21-.15.24-.24.18-.58-.47-.84-.47-.94,0-.03.44-.4.24-.59-.06-.05-1.28-.03-1.54,0-1.57.18-3.4.44-4.96.71l-1.3-.12L90.83,0l-.35,1.06c-3.16,4.27-6.02,8.57-9.21,12.76.13.25-.23.4-.24.47,0,.39.91.32.94.35Z"></path></g>
+            <g data-g="2" fill="#ffffff" filter="url(#lb-glow)" style="opacity:0;will-change:opacity"><path d="M36.38,29.06c.88,0,.7-.54.24-1.06.01-.6-.41-1.13-.47-1.77l.47.59c-.13.49.33.83.47,1.18.05.13-.04.31,0,.35.05.05,1.3.04,1.54,0,.53-.08,1.59-.62,2.13-.71.19-.03,1.03-.04,1.06,0,.3.3-.23,7.33,0,8.39.1.13.21.55.24.71.1.6-.07,1.38,0,2.01l-.71-1.3c-.59-1.47-1.05-3.06-1.65-4.49-.07-.16-.4-.55-.47-.71-.09-.21.13-.56-.59-.35-.09.03-.14.21-.24.24-1.46.37-3.26.71-4.72.94-.36.06-.61-.01-1.06.12-.3.09-.28-.05-.47-.24.33-.2.21-.42.24-.71.3-3.04,1.48-6.09,1.65-9.21l.24-1.06c.5.13.44.43.47.83.13,1.61.85,4.1,1.42,5.67.05.14.36.2.24.59Z"></path><path d="M52.91,26.22l-1.42.47c-.11.84.55,1.28.94,1.89l-1.3-.24c-.91-.74-2.09-.77-3.07-1.18-.28-.12-.65-.55-1.06-.47.09-.36.52-.53.83-.71.12-.07.61-.17.71-.24.36-.23.45-.64.35-1.06-.02-.08-.59-1.2-.71-1.42-.33-.6-.92-1.36-1.3-2.01-.16-.28-.38-.62-.35-.94.44.18.71.65,1.06.94,1.36,1.13,2.91,2.36,4.25,3.54.23.2,1.31,1.17,1.06,1.42Z"></path><path d="M57.4,25.75l-2.6-2.48c-.15-.15-.43-.78-.47-.83s-.43.04-.47,0c-.03-.03-.03-.68,0-.71.04-.04.89-.04,1.06,0,.19.04.35.56.83-.12-.08-1.63.11-3.35,0-4.96,0-.08-.23-.15-.24-.24-.05-.66.04-1.35,0-2.01l.94,1.54c-.05,1,1.01,2.06,1.18,2.83.11.53.1,3.67,0,4.25-.05.33-.16.76-.24,1.18-.08.45.06,1.05,0,1.54Z"></path><path d="M34.37,21.5c.15,0,.15.24,0,.24s-.15-.24,0-.24Z"></path></g>
+            <g data-g="3" fill="#ffffff" filter="url(#lb-glow)" style="opacity:0;will-change:opacity"><path d="M80.79,34.72l1.54-1.18c.4.13.46-.2.35-.59-.03-.1-.22-.15-.24-.24-.24-1.16.2-.7.83-.83,1.52-.3,3.22-.57,4.72-.94.48-.12.91-.18,1.42-.24.35-.04.7.14.94-.24.51.5-.04.39-.24.47-.1.04-.14.2-.24.24-.87.32-1.99.59-2.83.94-.34.14-.84.57-1.18.71s-.54-.09-.35.83c.02.09.22.15.24.24.03.15.04.83,0,.83h-4.96Z"></path><path d="M89.06,39.45c.05.41-.54.23-.83.24-.31,0-1.48-.05-1.54,0-.07.07-.09,1.65.24,1.77-.06.36.46,1.29.24,1.54-.19.21-.56-.23-.71-.35-.8-.67-1.64-1.42-2.48-2.01-.33-.23-.57-.21-.59-.24-.03-.03-.09-.45.12-.47.33-.04,1.47.06,1.54,0,.09-.09-.09-1.32,0-1.42.18-.19.56.23.59.24.67.12,1.59.04,2.13.47l1.3.24Z"></path><path d="M64.25,23.39c.07.07,0,.51-.12.71-.4.66-1.27,1.3-1.54,2.01l-.94.83c-.04-.5.06-1.05,0-1.54-.01-.09-.22-.15-.24-.24-.15-.84.53-2.09.94-2.83l.47-1.3c.4-.06.24.55.24.83,0,.3.05.67,0,.94-.02.09-.24.16-.24.24,0,.5,1.36.3,1.42.35Z"></path><path d="M76.06,44.88l-2.01-1.89c-.54,0-.11-.14-.71-.47-.5-.28-1.31-1.42-.47-1.65.28-.08.82.5,1.18.47,1.02.99,2.21,1.96,2.01,3.54Z"></path><path d="M68.98,27.64c.25.25-.37.66-.47.83-.16.26-1.15,1.78-1.18,1.89-.24.86.58,1.23-1.06,1.06l-1.06.24c0-.48.68-.44.71-.47.68-.79,1.47-2.08,2.13-2.95.15-.19.74-.8.94-.59Z"></path><path d="M77.72,38.5c-.22.18-.57-.31-.83-.24-.16.05-.6.71-.71.71-.21,0-1.13-1.35-1.3-1.65.78.19.97-.3,1.54-.47.09.28,1.38,1.59,1.3,1.65Z"></path><path d="M82.56,13.46c.33,0-.35.69-.35.35,0-.03.33-.35.35-.35Z"></path><path d="M73.11,23.15c.33,0-.35.69-.35.35,0-.03.33-.35.35-.35Z"></path><path d="M74.06,21.97c.15,0,.15.24,0,.24s-.15-.24,0-.24Z"></path><path d="M82.09,14.17c.15,0,.15.24,0,.24s-.15-.24,0-.24Z"></path></g>
+          </svg>
+
+          <div class="lb-ambient" style="position:absolute;inset:0;opacity:0;mix-blend-mode:screen;pointer-events:none;background:radial-gradient(circle at 50% 34%, #a78bfa, rgba(167,139,250,0) 65%);"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- В наборе -->
+    <div class="reveal" style="--delay:180ms">
+      <h3 class="font-serif text-brand-parchment text-2xl md:text-3xl tracking-wide mb-8">
+        В наборе
+      </h3>
+      <ul class="space-y-5">
+        {boxContents.map((item, i) => (
+          <li class="flex items-start gap-4">
+            <span
+              class="flex-shrink-0 font-serif text-brand-gold text-sm tracking-widest mt-1"
+              aria-hidden="true"
+            >
+              {String(i + 1).padStart(2, '0')}
+            </span>
+            <span class="font-serif text-brand-tan text-base md:text-lg leading-snug">
+              {item}
+            </span>
+          </li>
+        ))}
+      </ul>
+    </div>
+
+  </div>
+</section>
+
+<style>
+  @keyframes lb-breathe {
+    0%, 100% { transform: translateX(-50%) translateY(0); }
+    50%       { transform: translateX(-50%) translateY(-0.6%); }
+  }
+</style>
+
+<script>
+  const root    = document.getElementById('lightning-bag');
+  const ambient = root?.querySelector<HTMLElement>('.lb-ambient');
+  const bagEl   = root?.querySelector<HTMLElement>('.lb-bag');
+  const flood   = root?.querySelector<SVGFEFloodElement>('#lb-flood');
+  const byG: Record<number, HTMLElement> = {};
+  root?.querySelectorAll<HTMLElement>('[data-g]').forEach(el => {
+    byG[Number(el.dataset.g)] = el;
+  });
+
+  const color = '#a78bfa';
+  const timeouts: ReturnType<typeof setTimeout>[] = [];
+
+  function t(id: ReturnType<typeof setTimeout>) { timeouts.push(id); return id; }
+
+  function flicker(el: HTMLElement | undefined) {
+    if (!el) return;
+    const seq: [number, number][] = [[0,1],[45,0.12],[78,1],[120,0.45],[165,1],[240,0]];
+    seq.forEach(([ms, o]) => t(setTimeout(() => { el.style.opacity = String(o); }, ms)));
+  }
+
+  function pulse(strength: number) {
+    if (ambient) {
+      ambient.style.transition = 'none';
+      ambient.style.opacity = String(Math.min(1, strength));
+      void (ambient as HTMLElement).offsetWidth;
+      ambient.style.transition = 'opacity .42s cubic-bezier(.2,.7,.2,1)';
+      ambient.style.opacity = '0';
+    }
+    if (bagEl) {
+      bagEl.style.transition = 'none';
+      bagEl.style.filter = `drop-shadow(0 0 ${(6*strength).toFixed(1)}px ${color}) drop-shadow(0 0 ${(18*strength).toFixed(1)}px ${color})`;
+      t(setTimeout(() => {
+        bagEl.style.transition = 'filter .34s ease-out';
+        bagEl.style.filter = `drop-shadow(0 0 0px ${color})`;
+      }, 150));
+    }
+  }
+
+  function strike(forceBig = false) {
+    const big  = forceBig || Math.random() < 0.7;
+    const side = Math.random() < 0.5 ? 'L' : 'R';
+    const groups: number[] = [];
+    if (big) {
+      groups.push(side === 'L' ? 0 : 1);
+      if (Math.random() < 0.7) groups.push(side === 'L' ? 2 : 3);
+      if (Math.random() < 0.14) { groups.push(side === 'L' ? 1 : 0); if (Math.random() < 0.5) groups.push(side === 'L' ? 3 : 2); }
+    } else {
+      groups.push(side === 'L' ? 2 : 3);
+      if (Math.random() < 0.3) groups.push(side === 'L' ? 0 : 1);
+    }
+    [...new Set(groups)].forEach((g, i) => {
+      t(setTimeout(() => flicker(byG[g]), i * 32 + (g < 2 ? 0 : 18)));
+    });
+    const strength = big ? (0.82 + Math.random() * 0.18) : (0.38 + Math.random() * 0.22);
+    pulse(strength);
+  }
+
+  function loop() {
+    const base  = 2600 - 4 * 215; // frequency = 4
+    const delay = base * (0.5 + Math.random() * 1.1);
+    t(setTimeout(() => {
+      strike();
+      if (Math.random() < 0.18) t(setTimeout(() => strike(), 170 + Math.random() * 170));
+      loop();
+    }, delay));
+  }
+
+  // click to trigger a big strike
+  root?.addEventListener('click', () => strike(true));
+
+  // initial strike + loop
+  t(setTimeout(() => strike(), 500));
+  loop();
+</script>

@@ -1,0 +1,74 @@
+tech_stack:
+  framework: Astro
+  node_version: "20 LTS"
+  package_manager: "pnpm (или npm)"
+  language: TypeScript
+  styling: Tailwind CSS
+  images: "astro:assets, WebP/AVIF с фолбэком, lazy-loading"
+
+analytics:
+  tool: "Yandex Metrika"
+  goals_events:
+    - "клик по Primary CTA"
+    - "клик по Secondary CTA"
+    - "отправка формы wait-list"
+    - "скролл-глубина по секциям"
+
+seo:
+  target_keywords:
+    - "Сказка"
+    - "Фигурка"
+    - "Шут"
+  target_region: Russia
+  target_language: ru
+
+deployment:
+  hosting: "Reg.ru"
+  domain_punycode: "xn----7sbbbir1cgntjm6e1e.xn--p1ai"
+  cicd: "GitHub Actions: autobuild and deploy after push into main; preview-deploy for branches/PR"
+  env_vars:
+    - PUBLIC_YANDEX_METRIKA_ID
+    - FORM_WEBHOOK_URL
+    - PAYMENT_PROVIDER_PUBLIC_KEY
+    - PAYMENT_PROVIDER_SECRET_KEY
+    - SITE_URL
+
+performance_budget:
+  lighthouse_min_score: 90
+  hero_image_max_kb: 200
+  total_page_weight_max_mb: 1.5
+
+browser_support:
+  browsers:
+    - Chrome
+    - Safari
+    - Firefox
+    - Edge
+    - "Safari iOS"
+  versions: "последние 2 версии"
+  accessibility_standard: "WCAG 2.1 AA"
+
+waitlist_form:
+  fields:
+    - email
+    - "согласие 152-ФЗ"
+  storage_target: "Яндекс Таблицы"
+  submission_flow:
+    - "форма на сайте"
+    - "webhook → Telegram-бот"
+    - "перенос в Яндекс Таблицы (вручную/скриптом через Yandex Disk API)"
+  captcha: "Yandex SmartCaptcha"
+  consent_requirement: "двойной opt-in / согласие на обработку персональных данных (152-ФЗ)"
+
+payments:
+  legal_entity: "ИП"
+  available_acquirers:
+    - "юKassa"
+    - CloudPayments
+    - "Тинькофф Эквайринг"
+    - Robokassa
+  preorder_payment_type: "полная предоплата"
+  manufacturing_delivery_time: "от трёх недель"
+  delivery_regions:
+    - "Россия"
+  return_exchange_policy: "при наличии сертификата подлинности и чека о покупке возможен возврат или восстановление; восстановление — от 4 недель с момента передачи фигурки в мастерскую"

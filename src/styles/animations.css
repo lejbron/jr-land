@@ -1,0 +1,19 @@
+@keyframes peek {
+  0%, 100% { transform: translateY(0)    rotate(-8deg); }
+  50%       { transform: translateY(-10px) rotate(-8deg); }
+}
+
+@keyframes peek-delay {
+  0%, 100% { transform: translateY(0)    rotate(8deg) scaleX(-1); }
+  50%       { transform: translateY(-10px) rotate(8deg) scaleX(-1); }
+}
+
+.peek-anim {
+  animation: peek 3s ease-in-out infinite;
+  transform-origin: bottom center;
+}
+
+.peek-anim-delay {
+  animation: peek-delay 3s ease-in-out infinite 0.5s;
+  transform-origin: bottom center;
+}

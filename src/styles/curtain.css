@@ -1,0 +1,22 @@
+.curtain {
+  position: absolute;
+  top: 0;
+  height: 100%;
+  width: 50%;
+  z-index: 20;
+  will-change: transform;
+  background-repeat: no-repeat;
+  background-size: 200% 100%;
+}
+
+.curtain--left {
+  left: 0;
+  background-image: url('/curtain.png');
+  background-position: 0% 50%;
+}
+
+.curtain--right {
+  right: 0;
+  background-image: url('/curtain.png');
+  background-position: 100% 50%;
+}

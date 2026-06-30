@@ -1,0 +1,90 @@
+---
+import '../styles/reveal.css';
+---
+
+<section id="cta" class="bg-brand-deep py-24 px-6">
+  <div class="max-w-xl mx-auto text-center reveal">
+
+    <!-- Series logo -->
+    <img
+      src="/logos/logo_sign.svg"
+      alt="Мир Шута"
+      class="w-36 mx-auto mb-8 opacity-75"
+    />
+
+    <!-- Event date badge -->
+    <div class="inline-flex items-center gap-2 border border-brand-gold/35 rounded-full px-5 py-2 mb-8">
+      <span class="w-1.5 h-1.5 rounded-full bg-brand-gold flex-shrink-0"></span>
+      <span class="font-serif text-brand-gold text-sm tracking-[0.25em] uppercase">
+        7 августа
+      </span>
+    </div>
+
+    <h2 class="font-serif text-brand-parchment text-4xl md:text-5xl tracking-wide leading-tight mb-3">
+      Занять своё место
+    </h2>
+    <p class="font-serif text-brand-tan/60 text-base tracking-[0.2em] mb-6">
+      001&thinsp;/&thinsp;250
+    </p>
+
+    <!-- Price -->
+    <p class="font-serif text-brand-parchment text-4xl md:text-5xl tracking-wider mb-12">
+      25&thinsp;000&thinsp;₽
+    </p>
+
+    <!-- Waitlist form -->
+    <form id="waitlist-form" novalidate class="flex flex-col gap-4">
+      <input
+        type="email"
+        name="email"
+        placeholder="Ваша почта"
+        required
+        autocomplete="email"
+        class="w-full bg-transparent border border-brand-purple/40 rounded-sm px-5 py-4 font-serif text-brand-parchment text-base placeholder:text-brand-tan/40 focus:outline-none focus:border-brand-purple transition-colors"
+      />
+
+      <label class="flex items-start gap-3 text-left cursor-pointer">
+        <input
+          type="checkbox"
+          name="consent"
+          required
+          class="mt-1 flex-shrink-0 w-4 h-4 accent-brand-purple cursor-pointer"
+        />
+        <span class="font-serif text-brand-tan/55 text-xs leading-relaxed">
+          Я согласен(а) на обработку персональных данных в соответствии
+          с&nbsp;<a href="/privacy" class="underline underline-offset-2 hover:text-brand-tan/80 transition-colors">Политикой конфиденциальности</a>&nbsp;(152&#8209;ФЗ).
+        </span>
+      </label>
+
+      <button
+        type="submit"
+        class="w-full bg-brand-gold hover:bg-brand-gold/90 text-brand-ink font-serif text-sm tracking-[0.3em] uppercase py-4 rounded-sm transition-all duration-300 hover:shadow-[0_0_35px_rgba(201,162,39,0.35)] active:scale-[0.985]"
+      >
+        Заказать
+      </button>
+    </form>
+
+    <p
+      id="form-success"
+      class="hidden mt-6 font-serif text-brand-gold text-base tracking-wide"
+      role="status"
+      aria-live="polite"
+    >
+      Ваша заявка принята.&ensp;Мы свяжемся с вами.
+    </p>
+
+  </div>
+</section>
+
+<script>
+  const form    = document.getElementById('waitlist-form') as HTMLFormElement | null;
+  const success = document.getElementById('form-success');
+
+  form?.addEventListener('submit', (e) => {
+    e.preventDefault();
+    if (!form.checkValidity()) { form.reportValidity(); return; }
+    // TODO: POST to webhook endpoint
+    form.style.display = 'none';
+    success?.classList.remove('hidden');
+  });
+</script>

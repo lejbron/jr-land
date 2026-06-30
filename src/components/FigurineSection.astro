@@ -1,0 +1,41 @@
+---
+import '../styles/reveal.css';
+
+const figurinePhotos = [
+  { src: '/front.png', alt: 'Фигурка, вид спереди' },
+  { src: '/left.png',  alt: 'Фигурка, вид сбоку'  },
+  { src: '/back.png',  alt: 'Фигурка, вид сзади'  },
+];
+---
+
+<section id="figurine" class="bg-brand-void py-24 px-6">
+  <div class="max-w-6xl mx-auto">
+
+    <div class="text-center mb-16 reveal">
+      <p class="font-serif text-brand-purple text-sm tracking-[0.35em] uppercase mb-4">
+        Ограниченный тираж
+      </p>
+      <h2 class="font-serif text-brand-parchment text-4xl md:text-5xl tracking-wide">
+        Коллекционная фигурка
+      </h2>
+      <div class="w-10 h-px bg-brand-gold mx-auto mt-6"></div>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6">
+      {figurinePhotos.map(({ src, alt }, i) => (
+        <div
+          class="relative group overflow-hidden rounded-sm reveal"
+          style={`--delay:${i * 120}ms`}
+        >
+          <img
+            src={src}
+            alt={alt}
+            class="w-full aspect-[3/4] object-cover transition-transform duration-700 group-hover:scale-[1.03]"
+          />
+          <div class="absolute inset-0 bg-gradient-to-t from-brand-void/50 to-transparent pointer-events-none"></div>
+        </div>
+      ))}
+    </div>
+
+  </div>
+</section>

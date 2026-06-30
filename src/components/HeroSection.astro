@@ -1,0 +1,85 @@
+---
+import '../styles/curtain.css';
+---
+
+<section
+  id="hero"
+  class="relative h-screen overflow-hidden bg-brand-ink flex flex-col items-center justify-between select-none"
+>
+  <!-- Логотип в правом верхнем углу -->
+  <div class="absolute top-6 right-6 z-30">
+    <a href="https://vk.ru/meltyminds" target="_blank" rel="noopener noreferrer">
+      <img
+        src="/logos/tower_logo_colored.svg"
+        alt="Мир Шута"
+        class="h-12 md:h-16 opacity-90"
+      />
+    </a>
+  </div>
+
+  <!-- Надписи: Мир Шута + Сказочник — в пространстве между занавесками -->
+  <div
+    id="hero-signs"
+    class="absolute z-30 flex flex-col items-center text-center px-4 pointer-events-none"
+    style="top: 40%; transform-origin: center;"
+  >
+    <img
+      src="/logos/logo_sign.svg"
+      alt=""
+      aria-hidden="true"
+      class="w-56 md:w-80 drop-shadow-[0_0_40px_rgba(88,74,153,0.6)]"
+    />
+    <!-- H1 для SEO, визуально скрыт — смысл передаёт SVG выше -->
+    <h1 class="sr-only">Мир Шута — Сказочник</h1>
+    <img
+      src="/logos/skazo4nik.svg"
+      alt="Сказочник"
+      class="mt-4 w-40 md:w-56"
+    />
+  </div>
+
+  <!-- Занавес -->
+  <div id="curtain-left"  class="curtain curtain--left"></div>
+  <div id="curtain-right" class="curtain curtain--right"></div>
+
+  <!-- Скролл-подсказка -->
+  <div class="relative z-40 pb-6 flex flex-col items-center gap-2 text-brand-tan/40">
+    <span class="font-serif text-xs tracking-[0.35em] uppercase">Открыть</span>
+    <svg
+      class="w-5 h-5 animate-bounce"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      stroke-width="1.5"
+      aria-hidden="true"
+    >
+      <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+    </svg>
+  </div>
+</section>
+
+<script>
+  const curtainLeft  = document.getElementById('curtain-left');
+  const curtainRight = document.getElementById('curtain-right');
+  const heroSigns    = document.getElementById('hero-signs');
+  let ticking = false;
+
+  window.addEventListener('scroll', () => {
+    if (ticking) return;
+    ticking = true;
+    requestAnimationFrame(() => {
+      const progress = Math.min(window.scrollY / window.innerHeight, 1);
+      const offset   = progress * 115;
+      if (curtainLeft)  curtainLeft.style.transform  = `translateX(-${offset}%)`;
+      if (curtainRight) curtainRight.style.transform = `translateX(${offset}%)`;
+      // надписи улетают назад за занавес: уменьшаются и исчезают
+      if (heroSigns) {
+        const scale   = 1 - progress * 0.25;
+        const opacity = Math.max(0, 1 - progress * 2.5);
+        heroSigns.style.transform = `scale(${scale})`;
+        heroSigns.style.opacity   = String(opacity);
+      }
+      ticking = false;
+    });
+  }, { passive: true });
+</script>

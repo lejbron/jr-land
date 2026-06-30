@@ -1,0 +1,40 @@
+---
+---
+
+<div
+  id="cookie-banner"
+  role="dialog"
+  aria-label="Уведомление об использовании файлов cookie"
+  class="fixed bottom-0 inset-x-0 z-50 bg-brand-deep border-t border-brand-purple/20 px-6 py-4 hidden"
+>
+  <div class="max-w-5xl mx-auto flex flex-col sm:flex-row items-start sm:items-center gap-4 justify-between">
+    <p class="font-serif text-brand-tan/70 text-xs leading-relaxed max-w-2xl">
+      Мы используем файлы cookie для корректной работы сайта.
+      Продолжая пользоваться сайтом, вы соглашаетесь с их использованием.
+      <a href="/privacy" class="underline underline-offset-2 hover:text-brand-tan transition-colors whitespace-nowrap">
+        Подробнее
+      </a>
+    </p>
+    <button
+      id="cookie-accept"
+      class="flex-shrink-0 font-serif text-xs tracking-[0.25em] uppercase border border-brand-gold/40 text-brand-gold px-5 py-2 rounded-sm hover:bg-brand-gold/10 transition-colors"
+    >
+      Принять
+    </button>
+  </div>
+</div>
+
+<script>
+  const COOKIE_KEY = 'cookie_consent';
+  const banner  = document.getElementById('cookie-banner');
+  const acceptBtn = document.getElementById('cookie-accept');
+
+  if (!localStorage.getItem(COOKIE_KEY)) {
+    banner?.classList.remove('hidden');
+  }
+
+  acceptBtn?.addEventListener('click', () => {
+    localStorage.setItem(COOKIE_KEY, '1');
+    banner?.classList.add('hidden');
+  });
+</script>

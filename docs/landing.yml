@@ -1,0 +1,49 @@
+brand:
+  name_ru: "Башня Мастеров"
+  domain: "башня-мастеров.рф"
+  personality:
+    - Professional
+    - Premium
+    - Bold
+    - Trustworthy
+  tone_of_voice:
+    - "мистический"
+    - "атмосферный"
+  writing_style: "literary style"
+  colors:
+    primary: "#584A99"
+    secondary: "#9C8E85"
+    accent:
+      - "#C9A227"
+      - "#8B1E1E"
+    background: "#F7F3EC"
+  typography:
+    headings: "EB Garamond, increased tracking, cyrillic subset, OFL license"
+    body: "EB Garamond"
+    alternatives_to_test:
+      - "Yeseva One"
+      - "PT Serif"
+  assets_locations:
+    logo: "../assets/logos"
+    illustrations_icons: "../assets/package"
+    photos: "../assets/photos"
+    video: "../assets/video"
+  illustrations_count: 18
+
+product:
+  name: "Сказочник"
+  category: "collectible figurine"
+  development_stage: "Established Product"
+
+value_proposition:
+  core_promise: "Мы даем возможность стать частью избранного сообщества обладателей уникального артефакта."
+  why_customers_choose_us: "Потому что вы получаете не масс-маркет с принтом, а единственный в своём роде официальный артефакт — сделанный вручную в России, а не штампом в Китае, и подтверждённый документально — сертификатом с автографом, а не на словах продавца."
+  top_benefits:
+    - "У группы нет других официальных производителей мерча"
+    - "Фигурки реально произведены на территории России"
+    - "Наличие сертификата подлинности с автографом"
+
+goals:
+  primary_goal: "Sell products"
+  secondary_goal: "Collect email signups"
+  expected_leads_sales: 250

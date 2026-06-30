@@ -1,0 +1,16 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply bg-brand-ink font-serif antialiased;
+  }
+}
+
+@layer utilities {
+  .z-25 { z-index: 25; }
+}
