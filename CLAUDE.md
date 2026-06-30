@@ -5,6 +5,7 @@
 - Never delete files, add them to `suggested_for_deletition` folder. Create folder if it does not exist.
 - Never install any packages on host machine, use Docker images instead.
 - Collect all your comments in one file - .claude/landing_log.md
+- Do not push anything to the repo before build is manualy tested.
 
 ## Roles
 
