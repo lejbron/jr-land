@@ -2,10 +2,16 @@
 
 ## General
 
+1. Check the _docs folder for updates via docs_updates_log.md file. Read full folder if no log exists and create it. 
+2. Plan changes before implementation. 
+3. Update the docs if necessary after changes approve.
+4. Always rebuild the site accordingly to _build_data/Wireframe.md and other files in _build_data folder.
+
 - Never delete files, add them to `suggested_for_deletition` folder. Create folder if it does not exist.
 - Never install any packages on host machine, use Docker images instead.
-- Collect all your comments in one file - .claude/landing_log.md
+- Collect main context in .claude/HOT.md and use it to remember the context fast. 
 - Do not push anything to the repo before build is manualy tested.
+- If you touched anything under .devcontainer/, tell user to explicitly rebuild.
 
 ## Roles
 
@@ -35,7 +41,7 @@ Before implementing:
 
 1. Analyze all provided documentation.
 2. Identify missing information.
-3. Create landing page structure.
+3. Create/update landing page structure.
 4. Explain reasoning.
 5. Implement only after planning.
 

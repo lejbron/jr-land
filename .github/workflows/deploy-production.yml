@@ -1,0 +1,36 @@
+name: Deploy to production (Reg.ru)
+
+on:
+  push:
+    branches:
+      - main
+
+concurrency:
+  group: production
+  cancel-in-progress: true
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: npm
+
+      - run: npm ci
+
+      - run: npm run build
+
+      - name: Deploy to Reg.ru over SSH
+        uses: burnett01/rsync-deployments@7.0.2
+        with:
+          switches: -avzr --delete
+          path: dist/
+          remote_path: ${{ secrets.REGRU_REMOTE_PATH }}
+          remote_host: ${{ secrets.REGRU_SSH_HOST }}
+          remote_port: ${{ secrets.REGRU_SSH_PORT }}
+          remote_user: ${{ secrets.REGRU_SSH_USER }}
+          remote_key: ${{ secrets.REGRU_SSH_PRIVATE_KEY }}
