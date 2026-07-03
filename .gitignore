@@ -1,3 +1,5 @@
 dist/
 .astro/
 suggested_for_deletition
+.DS_Store
+node_modules/

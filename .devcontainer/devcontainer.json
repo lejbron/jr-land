@@ -1,0 +1,22 @@
+{
+  "name": "jr-land-astro",
+  "dockerComposeFile": "docker-compose.yml",
+  "service": "web",
+  "workspaceFolder": "/app",
+  "remoteUser": "node",
+  "remoteEnv": {
+    "SHELL": "/bin/sh"
+  },
+  "forwardPorts": [4321],
+  "postCreateCommand": "npm install",
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "anthropic.claude-code",
+        "astro-build.astro-vscode",
+        "bradlc.vscode-tailwindcss",
+        "esbenp.prettier-vscode"
+      ]
+    }
+  }
+}
