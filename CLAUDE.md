@@ -12,6 +12,8 @@
 - Collect main context in .claude/HOT.md and use it to remember the context fast. 
 - Do not push anything to the repo before build is manualy tested.
 - If you touched anything under .devcontainer/, tell user to explicitly rebuild.
+- Use context7 MCP first when searching for documentation.
+- Never use git command direclty. Use GitHub MCP server to communicate with the repository. 
 
 ## Roles
 

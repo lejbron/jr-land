@@ -6,15 +6,15 @@
   z-index: 20;
   will-change: transform;
   background-repeat: no-repeat;
-  background-size: 200% 100%;
+  background-size: cover;
 }
 
 .curtain--left {
   left: 0;
-  background-position: 0% 50%;
+  background-position: right center;
 }
 
 .curtain--right {
   right: 0;
-  background-position: 100% 50%;
+  background-position: left center;
 }

@@ -21,3 +21,11 @@ Tracks when `_docs/` was reviewed and whether anything in it needed to change as
   - Section order in `src/pages/index.astro` had Quote and the three-photos block before Certificate; wireframe order is Hero → Character → Certificate → Quote → three-photos → Details. Reordered and corrected the misleading block-number comments.
   - `FigurineDetails.astro` subsection heading said "Процесс создания"; wireframe names it "Характеристики". Renamed to match.
 - `CtaSection.astro` (waitlist/order form) is not part of the wireframe's 6 blocks and isn't included on the page; left untouched as out of scope.
+
+## 2026-07-03 (two-piece curtain)
+
+- User replaced the single combined `curtain.webp` with two separate source images (`curtain_left.png`, `curtain_right.png`), one per panel.
+- Converted both to WebP via dockerized ImageMagick (`--entrypoint magick` explicit, per [[feedback_imagemagick_docker_entrypoint]] to avoid the convert-overwrite gotcha): `curtain_left.webp`, `curtain_right.webp`.
+- `HeroSection.astro` now points each curtain div at its own image instead of sharing one file split via `background-position`. `curtain.css` no longer needs the `background-size: 200% 100%` half-split hack — switched to `background-size: cover` with each panel anchored toward the center seam (`right center` / `left center`).
+- `Layout.astro`'s preload now preloads both new images instead of the old single one.
+- Old `curtain.webp` and the two source PNGs moved to `suggested_for_deletition/` (not deleted, per CLAUDE.md).
